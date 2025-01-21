@@ -7,6 +7,7 @@ public class FirstPersonTouchController : MonoBehaviour
     private Rigidbody _rb;
     [SerializeField] Joystick _joystick;
     [SerializeField] float _speed = 5f;
+    [SerializeField] Transform _cameraTransform;
 
     void Start()
     {
@@ -16,8 +17,8 @@ public class FirstPersonTouchController : MonoBehaviour
     {
         Vector3 input = new Vector3(_joystick.Horizontal, 0, _joystick.Vertical);
 
-        Vector3 cameraForward = cameraTransform.forward;
-        Vector3 cameraRight = cameraTransform.right;
+        Vector3 cameraForward = _cameraTransform.forward;
+        Vector3 cameraRight = _cameraTransform.right;
 
         cameraForward.y = 0;
         cameraRight.y = 0;
