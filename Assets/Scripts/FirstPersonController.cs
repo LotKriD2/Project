@@ -14,7 +14,7 @@ public class FirstPersonTouchController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 movement = new Vector3(_joystick.Horizontal(), 0, _joystick.Vertical());
+        Vector3 movement = cameraRight * input.x + cameraForward * input.z;
         _rb.MovePosition(_rb.position + movement * _speed * Time.fixedDeltaTime);
     }
 }
